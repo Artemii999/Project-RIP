@@ -5,7 +5,7 @@ from django.http import Http404, HttpResponseRedirect, HttpResponse
 
 
 def main(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html')
 
 
 def list(request):

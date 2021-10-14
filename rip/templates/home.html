@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} {{article.article_title}} {% endblock %}
+{% load static %}
+{% block content %}
+    <div class="home-page">
+        <div class="article">
+            <div class="article-image">
+                <img class="image" src="{% static 'image/book.jpg' %}">
+            </div>
+            <div class="article-content">
+                <h1> Книги наше всё </h1>
+                <span>Чтение в жизни играет огромную роль. Книги помогают узнать что-то новое, поддержать беседу или блеснуть эрудицией в компании. Но сами писатели видят в литературе и неочевидные бонусы. Читающий человек редко чувствует себя одиноким, с помощью хорошей истории может быстро отвлечься от гнетущих мыслей, лучше понимает мир и окружающих его людей. Все эти примеры есть в книгах. Мы решили их вспомнить.
+                </span>
+            </div>
+        </div>
+        <div class="article article-revers">
+            <div class="article-image">
+                <img class="image" src="{% static 'image/duna-move.jpg' %}">
+            </div>
+            <div class="article-content">
+                <h1> Вышел фильм по культовой книге </h1>
+                <span>Планета Арракис, также известная под названием Дюна, год 10191. Это арена борьбы между злом и благородством, мир тончайших и опаснейших интриг. Гигантские песчаные черви длиной в целую милю сторожат бесценное сокровище — меланжевую пряность, позволяющую путешествовать сквозь Пространство и Время. Тот, кто контролирует пряность, контролирует Вселенную.
+
+Народ Дюны ожидает пришествия Мессии, который поведет их на священную войну против династии злобных Харконненов. И Мессия является. Им становится юный Пол Атрейдес, сын герцога Лито, предательски убитого Харконненами с одобрения Императора. Полу предстоит великая миссия, которая навсегда изменит судьбу всей галактической империи.
+                </span>
+            </div>
+        </div>
+    </div>
+    <style>
+        .home-page {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+        .article-revers {
+            flex-direction: row-reverse !important;
+        }
+        .article-revers .article-content {
+            margin-left: 0;
+            margin-right: 50px;
+        }
+        .image {
+            max-width: 400px;
+            max-height: 400px;
+        }
+        .article-image {
+            display: flex;
+        }
+        .article-content {
+            display: flex;
+            max-width: 750px;
+            flex-direction: column;
+            margin-left: 50px;
+        }
+        .article {
+            display: flex;
+            flex-direction: row;
+            margin: 25px 0;
+        }
+    </style>
+
+{% endblock %}

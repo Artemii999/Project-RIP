@@ -10,8 +10,8 @@
       </div>
       {% if list_books %}
         {% for el in list_books %}
-        <div class="col-md-2">
-          <a href="{% url 'articles:detail' el.id %}" class="card-book">
+        <div class="col-md-2 list-block">
+          <a href="/{{ el.id }}" class="card-book"> {# {% url 'articles:detail' el.id %} #}
             <img class="card-image" src="{{ el.avatar.url }}" alt="Изображение книги">
             <span class="card-title">{{ el.article_title }}</span>
           </a>
@@ -26,4 +26,10 @@
       {% endif %}
     </div>
   </div>
+
+    <style>
+        .list-block {
+            margin: 0 20px;
+        }
+    </style>
 {% endblock %}

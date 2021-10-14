@@ -1,24 +1,42 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block title %} {{article.article_title}} {% endblock %}
 
 {% block content %}
     <div class="book">
-        <div class="book-name">
-            <h2>Название: "{{article.article_title}}"</h2>
+        <div class="cap">
+            <nav class="navbar col-12 sorting-container " style="flex-direction: row">
+                <a class="nav-link" href="/list"><img class="img-fluid img-return" src="{% static 'image/return.png' %}" alt="Вернуться"> </a>
+                <div class="container-fluid" style="width: 300px; margin-right: 0">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                        <button class="btn btn-outline-success" type="submit" style="margin-left: 10px">Поиск</button>
+                    </form>
+                </div>
+            </nav>
         </div>
-        <div class="book-image">
-
-        </div>
-        <div class="book-author">
-            <p style="font-style: italic">Автор: "{{article.article_author}}"</p>
-        </div>
-        <div class="book-text">
-            <p style="margin-bottom: 0;font-style: italic">Информация о книге: "{{article.article_text}}"</p>
-            <p style="margin-top: 0">Дата выхода: {{article.date}}</p>
-        </div>
-        <div>
-            <img class="img-rounded"  src="{{ article.avatar.url }}">
+        <div class="book-content">
+            <div class="container row" style="flex-wrap: nowrap">
+                <div class="book-image">
+                    <img class="img-rounded" src="{{ article.avatar.url }}">
+                </div>
+                <div class="container column book-title">
+                    <div class="book-name card-title">
+                        <h2>Название: "{{ article.article_title }}"</h2>
+                    </div>
+                    <div class="book-author card-author">
+                        <p style="font-style: italic">Автор: "{{ article.article_author }}"</p>
+                    </div>
+                    <div class="book-author card-genre">
+                        <p style="font-style: italic">Жанр: </p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-text">
+                <p style="margin-bottom: 0;font-style: italic">Информация о книге: "{{ article.article_text }}"</p>
+                <p style="margin-top: 0">Дата выхода: {{ article.date }}</p>
+            </div>
         </div>
     </div>
     <style>
@@ -29,12 +47,32 @@
             width: 100%;
             margin: auto;
         }
+
         .book-name {
             display: flex;
         }
+
         .book-text {
             display: flex;
             flex-direction: column;
+            text-indent: 20px;
+            margin-top: 50px;
+            color: antiquewhite; {# aquamarine #}
+        }
+        .book-image {
+            display: flex;
+            max-height: 240px;
+            margin: 0 20px;
+        }
+        .book-content {
+            padding: 50px;
+        }
+        .book-title {
+            margin-left: 20px;
+        }
+        .img-return {
+            height: 30px;
+            margin-left: 15px;
         }
     </style>
 

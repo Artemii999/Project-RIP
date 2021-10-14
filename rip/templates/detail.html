@@ -8,7 +8,7 @@
             <h2>Название: "{{article.article_title}}"</h2>
         </div>
         <div class="book-image">
-
+            <img class="img-rounded"  src="{{ article.avatar.url }}">
         </div>
         <div class="book-author">
             <p style="font-style: italic">Автор: "{{article.article_author}}"</p>
@@ -16,9 +16,6 @@
         <div class="book-text">
             <p style="margin-bottom: 0;font-style: italic">Информация о книге: "{{article.article_text}}"</p>
             <p style="margin-top: 0">Дата выхода: {{article.date}}</p>
-        </div>
-        <div>
-            <img class="img-rounded"  src="{{ article.avatar.url }}">
         </div>
     </div>
     <style>
